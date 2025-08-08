@@ -19,6 +19,7 @@ const User=require("./models/user.js");
 
 
 
+
 const { required } = require("joi");
 
 
@@ -72,9 +73,7 @@ const sessionOptions={
   },
 }
 
-//app.get("/",(req,res)=>{
-  //  res.send("hi i am root")
-//})
+
 
 
 
@@ -103,10 +102,14 @@ app.use((req, res, next) => {
 
 
 
+
 app.use("/listings",listingRouter)
 app.use("/listings/:id/reviews",reviewRouter)
 app.use("/",userRouter)
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+})
 
 
 
