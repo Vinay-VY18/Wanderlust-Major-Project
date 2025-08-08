@@ -106,9 +106,7 @@ app.use((req, res, next) => {
 app.use("/listings",listingRouter)
 app.use("/listings/:id/reviews",reviewRouter)
 app.use("/",userRouter)
-app.get("/test", (req, res) => {
-  res.send("✅ Server is running!");
-});
+
 
 
 app.get("/", (req, res) => {
